@@ -1,0 +1,14 @@
+db.createCollection("student")
+db.student.insertMany([
+  { name: "Priya Sen", age: 22, course: "Mathematics", city: "Mumbai" },
+  { name: "Ravi Verma", age: 21, course: "Chemistry", city: "Bangalore" },
+  { name: "Neha Gupta", age: 23, course: "Biology", city: "Hyderabad" }
+]);
+db.student.findOne({ name: "Priya Sen" });
+db.student.updateOne(
+  { name: "Priya Sen" },
+  { $set: { city: "Noida" } }
+);
+db.student.findOne({ name: "Priya Sen" });
+db.student.deleteOne({ name: "Priya Sen" });
+
